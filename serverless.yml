@@ -1,0 +1,22 @@
+service: my-serverless-app
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  profile: amalieiev-serverless
+
+plugins:
+  - serverless-webpack
+
+package:
+  individually: true
+
+functions:
+  getUsers:
+    handler: handlers/http/getUsers.handler
+    events:
+      - http:
+          method: GET
+          path: /v1/users
+          cors: true
