@@ -14,7 +14,7 @@ package:
 
 functions:
   getUsers:
-    handler: handlers/http/getUsers.handler
+    handler: src/http/getUsers.handler
     events:
       - http:
           method: GET

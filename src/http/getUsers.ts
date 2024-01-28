@@ -6,6 +6,6 @@ exports.handler = async (event) => {
 };
 
 const users = [
-  {id: 1, name: 'Artem'},
-  {id: 2, name: 'David'},
-]
+  { id: 1, name: "Artem" },
+  { id: 2, name: "David" },
+];

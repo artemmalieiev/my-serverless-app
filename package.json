@@ -12,6 +12,8 @@
   "dependencies": {
     "serverless": "^3.38.0",
     "serverless-webpack": "^5.13.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
     "webpack": "^5.90.0"
   }
 }
