@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "serverless-webpack": "^5.13.0"
+    "serverless": "^3.38.0",
+    "serverless-webpack": "^5.13.0",
+    "webpack": "^5.90.0"
   }
 }
