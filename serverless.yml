@@ -11,6 +11,11 @@ provider:
       Action:
         - dynamodb:*
       Resource: "*"
+    - Effect: Allow
+      Action:
+        - sns:SetSMSAttributes
+        - sns:Publish
+      Resource: "*"
 
 plugins:
   - serverless-webpack
@@ -22,6 +27,7 @@ custom:
     includeModules:
       forceExclude:
         - "@aws-sdk/client-dynamodb"
+        - "@aws-sdk/client-sns"
         - "@aws-sdk/lib-dynamodb"
 
 functions:
@@ -31,4 +37,11 @@ functions:
       - http:
           method: GET
           path: /v1/my-serverless-app/get-users
+          cors: true
+  SendSMS:
+    handler: src/http/send-sms.handler
+    events:
+      - http:
+          method: POST
+          path: /v1/my-serverless-app/send-sms
           cors: true
