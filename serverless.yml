@@ -6,17 +6,29 @@ provider:
   runtime: nodejs18.x
   profile: amalieiev-serverless
 
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource: "*"
+
 plugins:
   - serverless-webpack
 
-package:
-  individually: true
+custom:
+  webpack:
+    keepOutputDirectory: true
+    webpackConfig: webpack-config.js
+    includeModules:
+      forceExclude:
+        - "@aws-sdk/client-dynamodb"
+        - "@aws-sdk/lib-dynamodb"
 
 functions:
-  getUsers:
-    handler: src/http/getUsers.handler
+  GetUsers:
+    handler: src/http/get-users.handler
     events:
       - http:
           method: GET
-          path: /v1/users
+          path: /v1/my-serverless-app/get-users
           cors: true

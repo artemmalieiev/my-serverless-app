@@ -1,9 +1,12 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
-    "esModuleInterop": true, 
-    "strict": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "declaration": false,
+    "removeComments": true
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
